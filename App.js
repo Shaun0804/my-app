@@ -59,4 +59,5 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
 });
+// 測試
 export default App;
