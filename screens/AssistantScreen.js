@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   // },
   text: {
     fontSize: 40,
-    lineHeight: 0,
+    // lineHeight: 0,
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
