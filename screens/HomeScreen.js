@@ -8,7 +8,7 @@ import {button} from '../components/button';
 import {buttonImage} from '../components/buttonImage';
 import {text,text_1} from '../components/text';
 // const { onPress, title = 'Save' } = HomeScreen;
-//
+////
 function HomeScreen({ navigation }) {
   const [fontSize, setFontSize] = useState(40); // 初始字體大小
 
