@@ -62,7 +62,8 @@ export default function App() {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding:0' : 'height:-1'}
+      behavior={Platform.OS === 'ios' ? 'padding:0' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}  // 調整這個數值
       style={{ flex: 1 }}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -74,12 +75,13 @@ export default function App() {
               _id: 1,
             }}
           />
+          <Image
+            source={require('../../assets/images/voice.jpg')}
+            style={[image, { width: 430, height: 300 }]}
+          />
         </View>
       </TouchableWithoutFeedback>
-      <Image
-        source={require('../../assets/images/voice.jpg')}
-        style={[image, { width: 430, height: 300 }]}
-      />
+      
     </KeyboardAvoidingView>
   );
 }

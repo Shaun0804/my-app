@@ -1,6 +1,5 @@
-// ChatScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
 const ChatScreen = ({ route }) => {
   const { contact } = route.params;
@@ -25,28 +24,34 @@ const ChatScreen = ({ route }) => {
       <Text style={styles.messageText}>{item.text}</Text>
     </View>
   );
-
+//
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerText}>Chat with {contact?.name || 'Unknown'}</Text>
-      <FlatList
-        data={messages}
-        renderItem={renderMessage}
-        keyExtractor={(item, index) => index.toString()}
-        style={styles.messagesContainer}
-      />
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Type a message..."
-          value={inputText}
-          onChangeText={(text) => setInputText(text)}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}  // 調整這個數值
+      style={styles.container}
+    >
+      <View style={styles.container}>
+        <Text style={styles.headerText}>Chat with {contact?.name || 'Unknown'}</Text>
+        <FlatList
+          data={messages}
+          renderItem={renderMessage}
+          keyExtractor={(item, index) => index.toString()}
+          style={styles.messagesContainer}
         />
-        <TouchableOpacity style={styles.sendButton} onPress={handleSendMessage}>
-          <Text style={styles.sendButtonText}>Send</Text>
-        </TouchableOpacity>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.textInput}
+            placeholder="Type a message..."
+            value={inputText}
+            onChangeText={(text) => setInputText(text)}
+          />
+          <TouchableOpacity style={styles.sendButton} onPress={handleSendMessage}>
+            <Text style={styles.sendButtonText}>發送</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
