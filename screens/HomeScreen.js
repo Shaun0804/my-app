@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { View } from 'react-native';
-import { StyleSheet,Image, Pressable,Text,ScrollView,TouchableOpacity } from 'react-native';
+import { StyleSheet,Image, Pressable,Text,ScrollView,TouchableOpacity , ImageBackground} from 'react-native';
 const PlaceholderImage = require('../assets/images/background-image.png');
 import {image} from '../components/image'
 import {button} from '../components/button';
 import {buttonImage} from '../components/buttonImage';
 import {text,text_1} from '../components/text';
+// import imagee from '../assets/images/game1.png'
 // const { onPress, title = 'Save' } = HomeScreen;
 ////
 function HomeScreen({ navigation }) {
@@ -48,6 +49,7 @@ function HomeScreen({ navigation }) {
       
         <Text style={[text_1,{fontSize}]}>{"個人助理"} </Text>
         
+        
 
       <View style={styles.footerContainer}>
         <Pressable style={[button,{backgroundColor: '#98bef9'}]} onPress={() => navigation.navigate('居家安全')}>
@@ -58,8 +60,9 @@ function HomeScreen({ navigation }) {
             source={require('../assets/images/homesafety.png')}
             style={buttonImage}
           />
+          
           </Text>
-
+          {/* <ImageBackground source={imagee} style={{ width: '100%', height: '100%' }}></ImageBackground> */}
         </View>
           
         </Pressable>
