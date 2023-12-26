@@ -11,5 +11,6 @@ export const button = {
     // width: 300,
     // height: 80,
     borderWidth: 2, // 外框寬度
-    borderColor: 'black'
+    borderColor: 'black',
+    
 };

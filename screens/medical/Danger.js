@@ -62,10 +62,10 @@ const VideoPlayerScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Image
+      {/* <Image
           source={require('../../assets/images/assistant.png')}
           style={image}
-        />
+        /> */}
       <Video
         ref={videoRef}
         source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
   video: {
     width: '100%',
-    height: 300,
+    height: 245,
   },
   controlsContainer: {
     width: '80%',

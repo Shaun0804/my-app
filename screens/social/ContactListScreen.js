@@ -1,46 +1,32 @@
-// ContactListScreen.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import * as Contacts from 'expo-contacts';
+// import { text } from '../../components/text';
 
 const ContactListScreen = ({ navigation }) => {
-  const [contacts, setContacts] = useState([]);
-
-  useEffect(() => {
-    loadContacts();
-  }, []);
-
-  const loadContacts = async () => {
-    const { status } = await Contacts.requestPermissionsAsync();
-
-    if (status === 'granted') {
-      const { data } = await Contacts.getContactsAsync({
-        fields: [Contacts.Fields.PhoneNumbers, Contacts.Fields.Name],
-      });
-
-      if (data.length > 0) {
-        setContacts(data);
-      }
-    }
-  };
+  const fakeContacts = [
+    { id: 1, name: 'John Doe', phoneNumber: 'xxx-xxx-xxxx' },
+    { id: 2, name: 'Jane Smith', phoneNumber: 'yyy-yyy-yyyy' },
+    { id: 1, name: 'John Doe', phoneNumber: 'xxx-xxx-xxxx' },
+    { id: 2, name: 'Jane Smith', phoneNumber: 'yyy-yyy-yyyy' },
+    { id: 1, name: 'John Doe', phoneNumber: 'xxx-xxx-xxxx' },
+    { id: 2, name: 'Jane Smith', phoneNumber: 'yyy-yyy-yyyy' },
+    // 添加更多的虛構聯絡人
+  ];
 
   const handleContactPress = (contact) => {
-    // 導航到聊天畫面，並將選擇的聯絡人傳遞過去
     navigation.navigate('Chat', { contact });
   };
 
   const renderContactItem = ({ item }) => (
     <TouchableOpacity style={styles.contactItem} onPress={() => handleContactPress(item)}>
-      <Text>{item.name || 'Unknown'}</Text>
-      {item.phoneNumbers && item.phoneNumbers.length > 0 && (
-        <Text>{item.phoneNumbers[0].number}</Text>
-      )}
+      <Text style={styles.text}>{item.name || 'Unknown'}</Text>
+      <Text style={styles.text_2}>{item.phoneNumber}</Text>
     </TouchableOpacity>
   );
 
   return (
     <FlatList
-      data={contacts}
+      data={fakeContacts}
       renderItem={renderContactItem}
       keyExtractor={(item) => item.id.toString()}
       style={styles.contactList}
@@ -57,6 +43,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
   },
+  text:{
+    fontSize:40
+  },
+  text_2:{
+    fontSize:30
+  }
 });
 
 export default ContactListScreen;

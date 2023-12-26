@@ -110,7 +110,7 @@ const LocationScreen = () => {
           />
         </MapView>
       ) : (
-        <Text>Loading...</Text>
+        <Text>加載中...</Text>
       )}
 
       {distance && (

@@ -50,7 +50,7 @@ function HomeScreen({ navigation }) {
         
 
       <View style={styles.footerContainer}>
-        <Pressable style={[button,{backgroundColor: '#98bef9'}]} onPress={() => navigation.navigate('Homesafety')}>
+        <Pressable style={[button,{backgroundColor: '#98bef9'}]} onPress={() => navigation.navigate('居家安全')}>
         <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
 
         <Text style={[text,{fontSize}]}>{"居家安全"}
@@ -65,7 +65,7 @@ function HomeScreen({ navigation }) {
         </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fbceb3'}]} onPress={() => navigation.navigate('Entertainment')}>
+      <Pressable style={[button,{backgroundColor: '#fbceb3'}]} onPress={() => navigation.navigate('休閒娛樂')}>
         <Text style={[text,{fontSize}]}>{"休閒娛樂"}
         <Image
           source={require('../assets/images/entertan.png')}
@@ -75,7 +75,7 @@ function HomeScreen({ navigation }) {
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fa4733'}]} onPress={() => navigation.navigate('Healthy')}>
+      <Pressable style={[button,{backgroundColor: '#fa4733'}]} onPress={() => navigation.navigate('健康照護')}>
         <Text style={[text,{fontSize}]}>{"健康照護"}
         <Image
           source={require('../assets/images/healthy.png')}
@@ -104,7 +104,7 @@ function HomeScreen({ navigation }) {
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#faaff1'}]} onPress={() => navigation.navigate('Moneycontrol')}>
+      <Pressable style={[button,{backgroundColor: '#faaff1'}]} onPress={() => navigation.navigate('金錢管控')}>
         <Text style={[text,{fontSize}]}>{"金錢管控"}
         <Image
           source={require('../assets/images/money.png')}
@@ -119,7 +119,7 @@ function HomeScreen({ navigation }) {
       
       <View style={styles.footerContainer}>
       
-      <Pressable style={[button,{backgroundColor: '#98bdfa'}]} onPress={() => navigation.navigate('Danger')}>
+      <Pressable style={[button,{backgroundColor: '#98bdfa'}]} onPress={() => navigation.navigate('危機辨識')}>
         <Text style={[text,{fontSize}]}>{"危機辨識"}
         <Image
           source={require('../assets/images/danger.png')}
@@ -130,7 +130,7 @@ function HomeScreen({ navigation }) {
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fbb1f1'}]} onPress={() => navigation.navigate('Lifesafety')}>
+      <Pressable style={[button,{backgroundColor: '#fbb1f1'}]} onPress={() => navigation.navigate('個人安全')}>
         <Text style={[text,{fontSize}]}>{"個人安全"}
         <Image
           source={require('../assets/images/map.png')}
@@ -141,7 +141,7 @@ function HomeScreen({ navigation }) {
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fa4d35'}]} onPress={() => navigation.navigate('Sos')}>
+      <Pressable style={[button,{backgroundColor: '#fa4d35'}]} onPress={() => navigation.navigate('一鍵求助')}>
         <Text style={[text,{fontSize}]}>{"一鍵求助"}
         <Image
           source={require('../assets/images/sos.png')}

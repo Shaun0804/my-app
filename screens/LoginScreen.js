@@ -35,7 +35,7 @@ function HomeScreen({ navigation }) {
           </Text>
           
           <View style={styles.footerContainer}>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Home')}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('回主頁')}>
               <Text style={styles.text}>{"登入"}</Text>
               
             </Pressable>

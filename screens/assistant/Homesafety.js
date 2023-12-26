@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text,Image} from 'react-native';
 import { Video } from 'expo-av';
 import { Audio } from 'expo-av';
 import {buttonImage} from '../../components/buttonImage';
-import {image} from '../../components/imagesmall'
+// import {image} from '../../components/imagesmall'
 
 const VideoPlayerScreen = () => {
   const videoRef = useRef(null);
@@ -62,10 +62,10 @@ const VideoPlayerScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Image
+      {/* <Image
           source={require('../../assets/images/assistant.png')}
           style={image}
-        />
+        /> */}
       <Video
         ref={videoRef}
         source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
   video: {
     width: '100%',
-    height: 300,
+    height: 245,
   },
   controlsContainer: {
     width: '80%',
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 50,
     flexDirection: 'row',
-    // marginTop: 10,
+    marginTop: 10,
   },
   controlButton: {
     // backgroundColor: 'rgba(0, 0, 0, 0.7)',
