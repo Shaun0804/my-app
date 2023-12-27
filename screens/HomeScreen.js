@@ -277,27 +277,28 @@ export default function TabScreen() {
 
           if (route.name === '個人助理') {
             iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji5.png');
+              ? require('../assets/images/assistant1.png')
+              : require('../assets/images/assistant.png');
           } else if (route.name === '社交') {
             iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji5.png');
+              ? require('../assets/images/social1.png')
+              : require('../assets/images/social.png');
           }
           else if (route.name === '醫療照護') {
             iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji5.png');
+              ? require('../assets/images/medical1.png')
+              : require('../assets/images/medical.png');
           }
 
           // 返回一個帶有圖樣的組件
-          return <Image source={iconName} style={{ width: size*2, height: size*2 }} />;
+          return <Image source={iconName} style={{ width: size*3, height: size*3 }} />;
         },
-        tabBarStyle: { height: 120, paddingBottom: 50 },
+        tabBarStyle: { height: 120, paddingBottom:20 },
       })}
       tabBarOptions={{
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
+        labelStyle: { fontSize: 0.001 },
       }}
     >
       <Tab.Screen name="個人助理" component={HomeScreen} options={{ headerShown: false }}/>
