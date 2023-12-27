@@ -298,6 +298,7 @@ export default function TabScreen() {
       tabBarOptions={{
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
+        labelStyle: { fontSize: 0.001 },
       }}
     >
       <Tab.Screen name="個人助理" component={HomeScreen} options={{ headerShown: false }}/>
