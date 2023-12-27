@@ -1,5 +1,5 @@
 export const image = {
-    width: 150,
-    height: 134.25,
+    width: 210,
+    height: 187.95,
     borderRadius: 0,
   };

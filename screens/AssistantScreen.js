@@ -4,8 +4,12 @@ import { StyleSheet,Image, Pressable,Text} from 'react-native';
 const PlaceholderImage = require('../assets/images/background-image.png');
 import {image} from '../components/image'
 import {button} from '../components/button';
+import {buttonImage} from '../components/buttonImage';
+import {text} from '../components/text';
 // import Button from '../components/buttonStyles';
 // const { onPress, title = 'Save' } = HomeScreen;
+
+
 
 function HomeScreen({ navigation }) {
   
@@ -17,17 +21,33 @@ function HomeScreen({ navigation }) {
       </View>
       <View style={styles.footerContainer}>
       <Pressable style={[button,{backgroundColor: 'red'}]} onPress={() => navigation.navigate('Homesafety')}>
-        <Text style={styles.text}>{"居家安全"}</Text>
+        
+        <Text style={text}>{"居家安全"}
+        <Image
+          source={require('../assets/images/homesafety.png')}
+          style={buttonImage}
+        />
+        </Text>
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
       <Pressable style={button} onPress={() => navigation.navigate('Entertainment')}>
-        <Text style={styles.text}>{"休閒娛樂"}</Text>
+        <Text style={text}>{"休閒娛樂"}
+        <Image
+          source={require('../assets/images/entertan.png')}
+          style={buttonImage}
+        />
+        </Text>
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
       <Pressable style={button} onPress={() => navigation.navigate('Healthy')}>
-        <Text style={styles.text}>{"健康照護"}</Text>
+        <Text style={text}>{"健康照護"}
+        <Image
+          source={require('../assets/images/healthy.png')}
+          style={buttonImage}
+        />
+        </Text>
       </Pressable>
       </View>
     </View>
@@ -50,6 +70,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     color: '#808080',
     fontSize: 0,
+    paddingTop: 14,
   },
   imageContainer: {
     flex: 0.5,
@@ -72,30 +93,7 @@ const styles = StyleSheet.create({
     height: 58,
     fontSize: 30,
   },
-  // button: {
-  //   borderRadius: 10,
-  //   width: '100%',
-  //   height: '100%',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   flexDirection: 'row',
-  // },
-  // button: {
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   paddingVertical: 12,
-  //   paddingHorizontal: 32,
-  //   borderRadius: 4,
-  //   elevation: 3,
-  //   backgroundColor: 'black',
-  // },
-  text: {
-    fontSize: 40,
-    // lineHeight: 0,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
-  },
+  
 });
 
 export default HomeScreen;

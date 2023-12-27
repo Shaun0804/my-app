@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
   helpButton: {
     backgroundColor: 'red',
     padding: 20,
-    borderRadius: 8,
+    borderRadius: 50,
   },
   helpButtonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 180,
     fontWeight: 'bold',
     textAlign: 'center',
   },

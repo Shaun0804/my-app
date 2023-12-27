@@ -17,7 +17,10 @@ import Lifesafety from './screens/medical/Lifesafety';
 import Sos from './screens/medical/Sos';
 
 import Moneycontrol from './screens/social/Moneycontrol';
-import SocialPlat from './screens/social/SocialPlat';
+// import SocialPlat from './screens/social/ChatScreen';
+
+import ContactListScreen from './screens/social/ContactListScreen';
+import ChatScreen from './screens/social/ChatScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,21 +29,24 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="回主頁" component={HomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Assistant" component={AssistantScreen}/>
         <Stack.Screen name="Social" component={SocialScreen}/>
         <Stack.Screen name="醫療照護" component={MedicalScreen}/>
 
-        <Stack.Screen name="Entertainment" component={Entertainment}/>
-        <Stack.Screen name="Healthy" component={Healthy}/>
-        <Stack.Screen name="Homesafety" component={Homesafety}/>
+        <Stack.Screen name="休閒娛樂" component={Entertainment}/>
+        <Stack.Screen name="健康照護" component={Healthy}/>
+        <Stack.Screen name="居家安全" component={Homesafety}/>
 
-        <Stack.Screen name="Danger" component={Danger}/>
-        <Stack.Screen name="Lifesafety" component={Lifesafety}/>
-        <Stack.Screen name="Sos" component={Sos}/>
+        <Stack.Screen name="危機辨識" component={Danger}/>
+        <Stack.Screen name="個人安全" component={Lifesafety}/>
+        <Stack.Screen name="一鍵求助" component={Sos}/>
 
-        <Stack.Screen name="Moneycontrol" component={Moneycontrol}/>
-        <Stack.Screen name="SocialPlat" component={SocialPlat}/>
+        <Stack.Screen name="金錢管控" component={Moneycontrol}/>
+        {/* <Stack.Screen name="SocialPlat" component={SocialPlat}/> */}
+
+        <Stack.Screen name="ContactList" component={ContactListScreen} options={{ title: 'Contacts' }} />
+        <Stack.Screen name="Chat" component={ChatScreen} options={{ title: 'Chat' }} />
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -59,5 +65,4 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
 });
-// 測試01
 export default App;

@@ -4,9 +4,10 @@ import { StyleSheet,Image, Pressable,Text} from 'react-native';
 const PlaceholderImage = require('../assets/images/background-image.png');
 import {image} from '../components/image'
 import {button} from '../components/button';
+import {text} from '../components/text';
+import {buttonImage} from '../components/buttonImage';
 // import Button from '../components/buttonStyles';
 // const { onPress, title = 'Save' } = HomeScreen;
-
 function HomeScreen({ navigation }) {
   
   return (
@@ -16,13 +17,23 @@ function HomeScreen({ navigation }) {
         <Image source={PlaceholderImage} style={image} />
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: 'blue'}]} onPress={() => navigation.navigate('SocialPlat')}>
-        <Text style={styles.text}>{"社交平台"}</Text>
+      <Pressable style={[button,{backgroundColor: 'blue'}]} onPress={() => navigation.navigate('ContactList')}>
+        <Text style={text}>{"社交平台"}
+        <Image
+          source={require('../assets/images/socialplat.png')}
+          style={buttonImage}
+        />
+        </Text>
       </Pressable>
       </View>
       <View style={styles.footerContainer}>
       <Pressable style={button} onPress={() => navigation.navigate('Moneycontrol')}>
-        <Text style={styles.text}>{"金錢管控"}</Text>
+        <Text style={text}>{"金錢管控"}
+        <Image
+          source={require('../assets/images/money.png')}
+          style={buttonImage}
+        />
+        </Text>
       </Pressable>
       </View>
     </View>
@@ -45,6 +56,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     color: '#808080',
     fontSize: 0,
+    paddingTop: 14,
   },
   imageContainer: {
     flex: 0.5,
@@ -67,30 +79,7 @@ const styles = StyleSheet.create({
     height: 58,
     fontSize: 30,
   },
-  // button: {
-  //   borderRadius: 10,
-  //   width: '100%',
-  //   height: '100%',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   flexDirection: 'row',
-  // },
-  // button: {
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   paddingVertical: 12,
-  //   paddingHorizontal: 32,
-  //   borderRadius: 4,
-  //   elevation: 3,
-  //   backgroundColor: 'black',
-  // },
-  text: {
-    fontSize: 40,
-    // lineHeight: 0,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
-  },
+
 });
 
 export default HomeScreen;
