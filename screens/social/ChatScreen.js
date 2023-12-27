@@ -32,7 +32,7 @@ const ChatScreen = ({ route }) => {
       style={styles.container}
     >
       <View style={styles.container}>
-        <Text style={styles.headerText}>Chat with {contact?.name || 'Unknown'}</Text>
+        <Text style={styles.headerText}>傳訊息給 {contact?.name || 'Unknown'}</Text>
         <FlatList
           data={messages}
           renderItem={renderMessage}
@@ -42,7 +42,7 @@ const ChatScreen = ({ route }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
-            placeholder="Type a message..."
+            placeholder="輸入文字..."
             value={inputText}
             onChangeText={(text) => setInputText(text)}
           />
@@ -57,11 +57,11 @@ const ChatScreen = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.99,
     padding: 20,
   },
   headerText: {
-    fontSize: 18,
+    fontSize: 40,
     fontWeight: 'bold',
     marginBottom: 20,
   },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
   },
   messageText: {
-    fontSize: 16,
+    fontSize: 40,
   },
   inputContainer: {
     flexDirection: 'row',

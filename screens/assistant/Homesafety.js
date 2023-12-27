@@ -123,10 +123,10 @@ const VideoPlayerScreen = () => {
         >
           <Text>{isButtonPressed ? <Image
           source={require('../../assets/images/microphoneon.png')}
-          style={styles.img}
+          // style={styles.img}
         /> : <Image
         source={require('../../assets/images/microphone.png')}
-        style={styles.img}
+        // style={styles.img}
       />}</Text>
         </TouchableOpacity>
     </View>
@@ -141,6 +141,8 @@ const styles = StyleSheet.create({
   img:{
     width:100,
     height:100,
+    marginRight: 20,
+    marginLeft: 20,
   },
   video: {
     width: '100%',
@@ -149,17 +151,17 @@ const styles = StyleSheet.create({
   controlsContainer: {
     width: '80%',
     backgroundColor: '#bbbbbb',
-    padding: 10,
+    padding: 20,
     borderRadius: 50,
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 5,
   },
   controlButton: {
     // backgroundColor: 'rgba(0, 0, 0, 0.7)',
     // padding: 10,
     borderRadius: 5,
-    marginRight: 35,
-    marginLeft: 35,
+    marginRight: 30,
+    marginLeft: 30,
   },
   controlButtonText: {
     color: 'white',

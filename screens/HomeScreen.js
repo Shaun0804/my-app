@@ -5,8 +5,18 @@ import { StyleSheet,Image, Pressable,Text,ScrollView,TouchableOpacity , ImageBac
 const PlaceholderImage = require('../assets/images/background-image.png');
 import {image} from '../components/image'
 import {button} from '../components/button';
+import {button2} from '../components/button';
 import {buttonImage} from '../components/buttonImage';
 import {text,text_1} from '../components/text';
+import imager1 from '../assets/images/button1.png';
+import imager2 from '../assets/images/button2.png';
+import imager3 from '../assets/images/button3.png';
+import imager4 from '../assets/images/button4.png';
+import imager5 from '../assets/images/button5.png';
+import imager6 from '../assets/images/button1.png';
+import imager7 from '../assets/images/button2.png';
+import imager8 from '../assets/images/button3.png';
+// import backgroundStyle from '../components/backgroundStyle';
 // import imagee from '../assets/images/game1.png'
 // const { onPress, title = 'Save' } = HomeScreen;
 ////
@@ -40,118 +50,140 @@ function HomeScreen({ navigation }) {
 
 
 
-      <View style={styles.container}>
-      {/* <Text style={styles.item}>   </Text> */}
-      <View style={styles.imageContainer}>
-        <Image source={PlaceholderImage} style={image} />
-      </View>
+    <View style={styles.container}>
+    {/* <Text style={styles.item}>   </Text> */}
+    <View style={styles.imageContainer}>
+      <Image source={PlaceholderImage} style={image} />
+    </View>
+    <View style={styles.footerContainer}>
+      <Text style={[text_1,{fontSize}]}>{"個人助理"} </Text>
+    </View>
       <View style={styles.footerContainer}>
-      
-        <Text style={[text_1,{fontSize}]}>{"個人助理"} </Text>
-        
-        
-
-      <View style={styles.footerContainer}>
-        <Pressable style={[button,{backgroundColor: '#98bef9'}]} onPress={() => navigation.navigate('居家安全')}>
-        <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-
-        <Text style={[text,{fontSize}]}>{"居家安全"}
-          <Image
-            source={require('../assets/images/homesafety.png')}
-            style={buttonImage}
-          />
-          
-          </Text>
-          {/* <ImageBackground source={imagee} style={{ width: '100%', height: '100%' }}></ImageBackground> */}
-        </View>
-          
+        <Pressable style={button2} onPress={() => navigation.navigate('居家安全')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager1} style={button}>
+              <Text style={[text,{fontSize}]}>{"居家安全"}
+                <Image
+                  source={require('../assets/images/homesafety.png')}
+                  style={buttonImage}
+                />
+              </Text>
+              {/* <ImageBackground source={imagee} style={{ width: '100%', height: '100%' }}></ImageBackground> */}
+            </ImageBackground>
+          </View>
         </Pressable>
       </View>
+
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fbceb3'}]} onPress={() => navigation.navigate('休閒娛樂')}>
-        <Text style={[text,{fontSize}]}>{"休閒娛樂"}
-        <Image
-          source={require('../assets/images/entertan.png')}
-          style={buttonImage}
-        />
-        </Text>
-      </Pressable>
-      </View>
-      <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fa4733'}]} onPress={() => navigation.navigate('健康照護')}>
-        <Text style={[text,{fontSize}]}>{"健康照護"}
-        <Image
-          source={require('../assets/images/healthy.png')}
-          style={buttonImage}
-        />
-        </Text>
-      </Pressable>
+        <Pressable style={button2} onPress={() => navigation.navigate('休閒娛樂')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager2} style={button}>
+              <Text style={[text,{fontSize}]}>{"休閒娛樂"}
+                <Image
+                  source={require('../assets/images/entertan.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
 
-
+      <View style={styles.footerContainer}>
+        <Pressable style={button2} onPress={() => navigation.navigate('健康照護')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager3} style={button}>
+              <Text style={[text,{fontSize}]}>{"健康照護"}
+                <Image
+                  source={require('../assets/images/healthy.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
+      
       <View style={styles.footerContainer}>
         <Text style={[text_1,{fontSize}]}>{"社交"} </Text>
       </View>
       
 
       <View style={styles.footerContainer}>
-      
-      <Pressable style={[button,{backgroundColor: '#96bcf9'}]} onPress={() => navigation.navigate('ContactList')}>
-        <Text style={[text,{fontSize}]}>{"社交平台"}
-        <Image
-          source={require('../assets/images/socialplat.png')}
-          style={buttonImage}
-        />
-        </Text>
-      </Pressable>
+        <Pressable style={button2} onPress={() => navigation.navigate('ContactList')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager4} style={button}>
+              <Text style={[text,{fontSize}]}>{"社交平台"}
+                <Image
+                  source={require('../assets/images/socialplat.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
+
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#faaff1'}]} onPress={() => navigation.navigate('金錢管控')}>
-        <Text style={[text,{fontSize}]}>{"金錢管控"}
-        <Image
-          source={require('../assets/images/money.png')}
-          style={buttonImage}
-        />
-        </Text>
-      </Pressable>
+        <Pressable style={button2} onPress={() => navigation.navigate('金錢管控')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager5} style={button}>
+              <Text style={[text,{fontSize}]}>{"金錢管控"}
+                <Image
+                  source={require('../assets/images/money.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
+
       <View style={styles.footerContainer}>
         <Text style={[text_1,{fontSize}]}>{"醫療照護"} </Text>
       </View>
       
       <View style={styles.footerContainer}>
-      
-      <Pressable style={[button,{backgroundColor: '#98bdfa'}]} onPress={() => navigation.navigate('危機辨識')}>
-        <Text style={[text,{fontSize}]}>{"危機辨識"}
-        <Image
-          source={require('../assets/images/danger.png')}
-          style={buttonImage}
-        />
-        </Text>
-        
-      </Pressable>
+        <Pressable style={button2} onPress={() => navigation.navigate('危機辨識')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager6} style={button}>
+              <Text style={[text,{fontSize}]}>{"危機辨識"}
+                <Image
+                  source={require('../assets/images/danger.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fbb1f1'}]} onPress={() => navigation.navigate('個人安全')}>
-        <Text style={[text,{fontSize}]}>{"個人安全"}
-        <Image
-          source={require('../assets/images/map.png')}
-          style={buttonImage}
-        />
-        </Text>
-        
-      </Pressable>
+        <Pressable style={button2} onPress={() => navigation.navigate('個人安全')}>
+          <View style={styles.borderRadius}>
+            <ImageBackground source={imager7} style={button}>
+              <Text style={[text,{fontSize}]}>{"個人安全"}
+                <Image
+                  source={require('../assets/images/map.png')}
+                  style={buttonImage}
+                />
+              </Text>
+            </ImageBackground>
+          </View>
+        </Pressable>
       </View>
+
       <View style={styles.footerContainer}>
-      <Pressable style={[button,{backgroundColor: '#fa4d35'}]} onPress={() => navigation.navigate('一鍵求助')}>
-        <Text style={[text,{fontSize}]}>{"一鍵求助"}
-        <Image
-          source={require('../assets/images/sos.png')}
-          style={buttonImage}
-        />
-        </Text>
-        
+      <Pressable style={button2} onPress={() => navigation.navigate('一鍵求助')}>
+        <View style={styles.borderRadius}>
+          <ImageBackground source={imager8} style={button}>
+            <Text style={[text,{fontSize}]}>{"一鍵求助"}
+              <Image
+                source={require('../assets/images/sos.png')}
+                style={buttonImage}
+              />
+            </Text>
+          </ImageBackground>
+        </View>
       </Pressable>
       </View>
     </View>
@@ -167,7 +199,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1 ,
     paddingTop:20,
-    
+    // borderRadius: 10
   },
   container: {
     flex: 1,
@@ -201,7 +233,10 @@ const styles = StyleSheet.create({
     height: 58,
     fontSize: 30,
   },
-  
+  borderRadius:{
+    borderRadius:23,
+    overflow: 'hidden',
+  }
 });
 
 export default HomeScreen;

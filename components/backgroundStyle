@@ -1,0 +1,8 @@
+// backgroundStyle.js
+
+export const backgroundStyle = {
+    
+    borderRadius: 10,
+    
+    
+};

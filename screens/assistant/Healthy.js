@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, Image, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { Audio } from 'expo-av';
 import { GiftedChat } from 'react-native-gifted-chat';
-import { image } from '../../components/imagesmall';
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -64,7 +63,7 @@ export default function App() {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding:0' : 'height'}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}  // 調整這個數值
-      style={{ flex: 1 }}
+      style={{ flex: 0.975 }}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{ flex: 1 }}>
@@ -74,10 +73,6 @@ export default function App() {
             user={{
               _id: 1,
             }}
-          />
-          <Image
-            source={require('../../assets/images/voice.jpg')}
-            style={[image, { width: 430, height: 300 }]}
           />
         </View>
       </TouchableWithoutFeedback>
