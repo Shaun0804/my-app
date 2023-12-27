@@ -3,8 +3,8 @@
 export const button = {
     // alignItems: 'center',
     // justifyContent: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 40,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     // borderRadius: 10,
     elevation: 3,
     // backgroundColor: '#0074d9',
