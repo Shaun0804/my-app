@@ -1,7 +1,7 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, Image,StyleSheet, Pressable,ScrollView,TouchableOpacity , ImageBackground } from 'react-native';
 import { useState } from 'react';
+import { View } from 'react-native';
+import { StyleSheet,Image, Pressable,Text,ScrollView,TouchableOpacity , ImageBackground} from 'react-native';
 const PlaceholderImage = require('../assets/images/background-image.png');
 import {image} from '../components/image'
 import {button} from '../components/button';
@@ -16,10 +16,11 @@ import imager5 from '../assets/images/button5.png';
 import imager6 from '../assets/images/button1.png';
 import imager7 from '../assets/images/button2.png';
 import imager8 from '../assets/images/button3.png';
-
-const Tab = createBottomTabNavigator();
-
-function HomeScreen() {
+// import backgroundStyle from '../components/backgroundStyle';
+// import imagee from '../assets/images/game1.png'
+// const { onPress, title = 'Save' } = HomeScreen;
+////
+function HomeScreen({ navigation }) {
   const [fontSize, setFontSize] = useState(40); // 初始字體大小
 
   const changeFontSize = (newSize) => {
@@ -102,43 +103,6 @@ function HomeScreen() {
           </View>
         </Pressable>
       </View>
-    </View>
-    </ScrollView>
-  );
-}
-function SocialScreen() {
-  const [fontSize, setFontSize] = useState(40); // 初始字體大小
-
-  const changeFontSize = (newSize) => {
-    setFontSize(newSize);
-  };
-  
-  return (
-    <ScrollView>
-
-      <View style={{marginTop:50}}>
-        {/* 你的內容 */}
-        <Text style={{ fontSize:20,left:290 }}>字體大小設定</Text>
-
-        {/* 字體大小設定按鈕 */}
-        <View style={{ flexDirection: 'row', display:"flex",alignItems:"center",left:280 }}>
-          <TouchableOpacity onPress={() => changeFontSize(40)}>
-            <Text style={{ padding: 10, fontSize:12 }}>小</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => changeFontSize(50)}>
-            <Text style={{ padding: 10, fontSize:16 }}>中</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => changeFontSize(60)}>
-            <Text style={{ padding: 10, fontSize:20 }}>大</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    <View style={styles.container}>
-    {/* <Text style={styles.item}>   </Text> */}
-    <View style={styles.imageContainer}>
-      <Image source={PlaceholderImage} style={image} />
-    </View>
-    
       
       <View style={styles.footerContainer}>
         <Text style={[text_1,{fontSize}]}>{"社交"} </Text>
@@ -174,46 +138,6 @@ function SocialScreen() {
           </View>
         </Pressable>
       </View>
-    </View>
-    </ScrollView>
-  );
-}
-
-function MedicalScreen() {
-  const [fontSize, setFontSize] = useState(40); // 初始字體大小
-
-  const changeFontSize = (newSize) => {
-    setFontSize(newSize);
-  };
-  
-  return (
-    <ScrollView>
-
-      <View style={{marginTop:50}}>
-        {/* 你的內容 */}
-        <Text style={{ fontSize:20,left:290 }}>字體大小設定</Text>
-
-        {/* 字體大小設定按鈕 */}
-        <View style={{ flexDirection: 'row', display:"flex",alignItems:"center",left:280 }}>
-          <TouchableOpacity onPress={() => changeFontSize(40)}>
-            <Text style={{ padding: 10, fontSize:12 }}>小</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => changeFontSize(50)}>
-            <Text style={{ padding: 10, fontSize:16 }}>中</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => changeFontSize(60)}>
-            <Text style={{ padding: 10, fontSize:20 }}>大</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-
-
-    <View style={styles.container}>
-    {/* <Text style={styles.item}>   </Text> */}
-    <View style={styles.imageContainer}>
-      <Image source={PlaceholderImage} style={image} />
-    </View>
 
       <View style={styles.footerContainer}>
         <Text style={[text_1,{fontSize}]}>{"醫療照護"} </Text>
@@ -268,43 +192,6 @@ function MedicalScreen() {
 }
 
 
-export default function TabScreen() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, size }) => {
-          let iconName;
-
-          if (route.name === '個人助理') {
-            iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
-          } else if (route.name === '社交') {
-            iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
-          }
-          else if (route.name === '醫療照護') {
-            iconName = focused
-              ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
-          }
-
-          // 返回一個帶有圖樣的組件
-          return <Image source={iconName} style={{ width: size, height: size }} />;
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
-      }}
-    >
-      <Tab.Screen name="個人助理" component={HomeScreen} options={{ headerShown: false }}/>
-      <Tab.Screen name="社交" component={SocialScreen} options={{ headerShown: false }}/>
-      <Tab.Screen name="醫療照護" component={MedicalScreen} options={{ headerShown: false }}/>
-    </Tab.Navigator>
-  );
-}
 const styles = StyleSheet.create({
   footerContainer: {
     // flex: 1 / 3,
@@ -316,7 +203,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    // backgroundColor: '#ffff',
+    backgroundColor: '#ffff',
     alignItems: 'center',
   },
   item: {
@@ -351,7 +238,5 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   }
 });
-// HomeScreen.js（或其他屏幕的文件）
 
-
-
+export default HomeScreen;
