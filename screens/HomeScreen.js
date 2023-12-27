@@ -19,7 +19,7 @@ import imager8 from '../assets/images/button3.png';
 
 const Tab = createBottomTabNavigator();
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   const [fontSize, setFontSize] = useState(40); // 初始字體大小
 
   const changeFontSize = (newSize) => {
@@ -106,7 +106,7 @@ function HomeScreen() {
     </ScrollView>
   );
 }
-function SocialScreen() {
+function SocialScreen({ navigation }) {
   const [fontSize, setFontSize] = useState(40); // 初始字體大小
 
   const changeFontSize = (newSize) => {
@@ -179,7 +179,7 @@ function SocialScreen() {
   );
 }
 
-function MedicalScreen() {
+function MedicalScreen({ navigation }) {
   const [fontSize, setFontSize] = useState(40); // 初始字體大小
 
   const changeFontSize = (newSize) => {
@@ -278,20 +278,20 @@ export default function TabScreen() {
           if (route.name === '個人助理') {
             iconName = focused
               ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
+              : require('../assets/images/emoji5.png');
           } else if (route.name === '社交') {
             iconName = focused
               ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
+              : require('../assets/images/emoji5.png');
           }
           else if (route.name === '醫療照護') {
             iconName = focused
               ? require('../assets/images/emoji2.png')
-              : require('../assets/images/emoji2.png');
+              : require('../assets/images/emoji5.png');
           }
 
           // 返回一個帶有圖樣的組件
-          return <Image source={iconName} style={{ width: size, height: size }} />;
+          return <Image source={iconName} style={{ width: size*2, height: size*2 }} />;
         },
       })}
       tabBarOptions={{
@@ -305,6 +305,7 @@ export default function TabScreen() {
     </Tab.Navigator>
   );
 }
+
 const styles = StyleSheet.create({
   footerContainer: {
     // flex: 1 / 3,
