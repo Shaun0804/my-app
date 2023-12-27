@@ -293,6 +293,7 @@ export default function TabScreen() {
           // 返回一個帶有圖樣的組件
           return <Image source={iconName} style={{ width: size*2, height: size*2 }} />;
         },
+        tabBarStyle: { height: 120, paddingBottom: 50 },
       })}
       tabBarOptions={{
         activeTintColor: 'tomato',
