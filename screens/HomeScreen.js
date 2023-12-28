@@ -57,21 +57,6 @@ function HomeScreen({ navigation }) {
     <View style={styles.footerContainer}>
       <Text style={[text_1,{fontSize}]}>{"個人助理"} </Text>
     </View>
-      <View style={styles.footerContainer}>
-        <Pressable style={button2} onPress={() => navigation.navigate('居家安全')}>
-          <View style={styles.borderRadius}>
-            <ImageBackground source={imager1} style={button}>
-              <Text style={[text,{fontSize}]}>{"居家安全"}
-                <Image
-                  source={require('../assets/images/homesafety.png')}
-                  style={buttonImage}
-                />
-              </Text>
-              {/* <ImageBackground source={imagee} style={{ width: '100%', height: '100%' }}></ImageBackground> */}
-            </ImageBackground>
-          </View>
-        </Pressable>
-      </View>
 
       <View style={styles.footerContainer}>
         <Pressable style={button2} onPress={() => navigation.navigate('休閒娛樂')}>
