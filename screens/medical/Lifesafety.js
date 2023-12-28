@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
-import { image } from '../../components/imagesmall';
+import { Icon } from 'react-native-elements'; // 引入 Icon
+// import { image } from '../../components/imagesmall';
 const LocationScreen = () => {
   const [currentRegion, setCurrentRegion] = useState(null);
   const [homeLocation, setHomeLocation] = useState({ latitude: 0, longitude: 0 });
@@ -88,6 +89,17 @@ const LocationScreen = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Icon
+          name="settings"
+          type="material"
+          color="#888"
+          size={40}
+          onPress={() => {
+            // 處理按下齒輪圖示的事件
+          }}
+        />
+      </View>
       {currentRegion ? (
         <MapView
           style={styles.map}
@@ -126,7 +138,7 @@ const LocationScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1/2,
+    flex: 0.60,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -141,6 +153,13 @@ const styles = StyleSheet.create({
   walkingTimeText: {
     marginTop: 10,
     fontSize: 40,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    // position: 'absolute',
+    // top: 10,
+    right: -190,
+    // zIndex: 1,
   },
 });
 

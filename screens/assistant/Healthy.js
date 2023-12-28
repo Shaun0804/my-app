@@ -6,7 +6,7 @@ import { GiftedChat } from 'react-native-gifted-chat';
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [isRecording, setIsRecording] = useState(false);
-  const [recording, setRecording] = useState();
+  const [recording, setRecording] = useState([]);
 
   useEffect(() => {
     setMessages([
@@ -23,16 +23,49 @@ export default function App() {
   }, []);
 
   const handleSend = (newMessages = []) => {
+    const userMessage = newMessages[0];
     setMessages((prevMessages) => GiftedChat.append(prevMessages, newMessages));
+
+    // 模擬一個簡單的回應邏輯
+    if (userMessage.text && userMessage.text.includes('吃藥')) {
+      const response = {
+        _id: messages.length + 1,
+        text: '已幫你紀錄新活動，將會在晚上6:00體醒你要吃藥',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'ChatBot',
+        },
+      };
+      setTimeout(() => {
+        setMessages((prevMessages) => GiftedChat.append(prevMessages, [response]));
+      }, 500); // 模擬延遲
+    }
+    else if (userMessage.text && userMessage.text.includes('回診')) {
+      // 天氣相關的回覆
+      const response = {
+        _id: messages.length + 1,
+        text: '已幫你紀錄新活動，將會在3月28體醒你要回診',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'ChatBot',
+        },
+      };
+      setTimeout(() => {
+        setMessages((prevMessages) => GiftedChat.append(prevMessages, [response]));
+      }, 500); // 模擬延遲
+    }
+    // 可以根據需求添加更多情況
   };
 
   const startRecording = async () => {
     try {
       setIsRecording(true);
-      const recording = new Audio.Recording();
-      await recording.prepareToRecordAsync(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
-      await recording.startAsync();
-      setRecording(recording);
+      const recordingInstance = new Audio.Recording();
+      await recordingInstance.prepareToRecordAsync(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
+      await recordingInstance.startAsync();
+      setRecording(recordingInstance);
     } catch (error) {
       console.error('Error starting recording', error);
     }
@@ -62,8 +95,8 @@ export default function App() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding:0' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}  // 調整這個數值
-      style={{ flex: 0.975 }}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
+      style={{ flex: 1 }}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{ flex: 1 }}>
@@ -76,7 +109,6 @@ export default function App() {
           />
         </View>
       </TouchableWithoutFeedback>
-      
     </KeyboardAvoidingView>
   );
 }
