@@ -24,7 +24,14 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "port": 19002
+    },
+    "packagerOpts": {
+      "lanType": "ip",
+      "lan": true,
+      "devPort": 19000
     }
+    
   }
 }
