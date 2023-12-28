@@ -9,7 +9,7 @@ COPY ./package*.json ./
 COPY ./app.json ./
 COPY ./babel.config.js ./
 
-RUN npm install -g expo-cli@latest
+# RUN npm install -g expo-cli@latest
 # RUN npx expo install
 # RUN npx expo-cli install expo
 RUN npm install
@@ -29,4 +29,4 @@ EXPOSE 19002
 EXPOSE 3002
 
 # Command to run nginx
-CMD ["expo", "start"]
+CMD ["npx","expo", "start"]
